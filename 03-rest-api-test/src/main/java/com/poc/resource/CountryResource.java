@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.poc.dto.CountryResponse;
@@ -17,6 +19,7 @@ import com.poc.entity.Country;
 import com.poc.service.CountryService;
 
 @RestController
+@RequestMapping("country")
 public class CountryResource {
 
 	@Autowired
@@ -40,8 +43,8 @@ public class CountryResource {
 
 	}
 
-	@GetMapping("/getcountry/{countryname}")
-	public ResponseEntity<Country> getCountryBycountryName(@PathVariable("countryname") String countryname) {
+	@GetMapping("/getcountry")
+	public ResponseEntity<Country> getCountryBycountryName(@RequestParam("countryname") String countryname) {
 
 		try {
 			Country country = countryService.getCountryByName(countryname);

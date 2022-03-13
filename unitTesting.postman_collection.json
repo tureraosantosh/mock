@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "4fe4bedc-aa4c-402a-82c3-58c6e9b68c23",
+		"name": "unitTesting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAllCountries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/country/getcountries",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"country",
+						"getcountries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addCountry",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"countryName\": \"Japan\",\r\n    \"countryCapital\": \"Tokey\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/country/addcountry",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"country",
+						"addcountry"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateCountry",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"countryName\": \"India\",\r\n    \"countryCapital\": \"Delhi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/country/updatecountry/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"country",
+						"updatecountry",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCountryById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"countryName\": \"India\",\r\n    \"countryCapital\": \"Delhi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/country/getcountry/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"country",
+						"getcountry",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCountryByName",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"countryName\": \"India\",\r\n    \"countryCapital\": \"Delhi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/country/getcountry?countryname=Japan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"country",
+						"getcountry"
+					],
+					"query": [
+						{
+							"key": "countryname",
+							"value": "Japan"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
