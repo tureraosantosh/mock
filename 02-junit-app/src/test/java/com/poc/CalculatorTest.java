@@ -13,7 +13,7 @@ public class CalculatorTest {
 	static Calculator cal = null;
 
 	@BeforeAll
-	public static void any() {
+	public static void init() {
 
 		cal = new Calculator();
 	}
@@ -29,8 +29,7 @@ public class CalculatorTest {
 	}
 
 	@AfterAll
-	public static void dest() {
-		System.out.println("nulling object ");
+	public static void destroy() {
 		cal = null;
 	}
 

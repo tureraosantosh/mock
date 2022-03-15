@@ -20,7 +20,15 @@ public class CountryService {
 	}
 
 	public Country getCountryId(Long id) {
-		return countryRepo.findById(id).get();
+		Country country = null;
+		List<Country> findAll = countryRepo.findAll();
+		for (Country con : findAll) {
+			if (con.getId() == id) {
+				country = con;
+				break;
+			}
+		}
+		return country;
 	}
 
 	public Country getCountryByName(String countryName) {

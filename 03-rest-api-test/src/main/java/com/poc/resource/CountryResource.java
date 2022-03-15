@@ -26,15 +26,22 @@ public class CountryResource {
 	CountryService countryService;
 
 	@GetMapping("/getcountries")
-	public List<Country> getCountries() {
-		return countryService.getAllCountry();
+	public ResponseEntity<List<Country>> getCountries() {
+
+		try {
+			return new ResponseEntity<>(countryService.getAllCountry(), HttpStatus.FOUND);
+
+		} catch (Exception e) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+
 	}
 
 	@GetMapping("/getcountry/{id}")
 	public ResponseEntity<Country> getCountryById(@PathVariable("id") Long countryId) {
 		try {
 			Country country = countryService.getCountryId(countryId);
-			return new ResponseEntity<>(country, HttpStatus.OK);
+			return new ResponseEntity<>(country, HttpStatus.FOUND);
 
 		} catch (Exception e) {
 
