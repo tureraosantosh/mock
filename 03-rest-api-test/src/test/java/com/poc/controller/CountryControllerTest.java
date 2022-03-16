@@ -39,10 +39,8 @@ public class CountryControllerTest {
 	@Test
 	@Order(1)
 	public void testGetAllCountries() throws Exception {
-
 		// mock service layer
 		when(countryService.getAllCountry()).thenReturn(countries);
-
 //		mockMvc.perform(get("/country/getcountries"))
 		// create request url
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/country/getcountries");
